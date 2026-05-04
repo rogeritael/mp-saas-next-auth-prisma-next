@@ -1,0 +1,7 @@
+======================================
+Erro Instalação Next Auth
+======================================
+
+O problema ocorreu porque o Next.js 15 e o Auth.js (v5) utilizam versões muito recentes do React 19, mas o npm trava a instalação ao detectar conflitos entre versões de "pré-lançamento" (como as RCs) e as versões finais exigidas pelas dependências. Isso impedia que o módulo next-auth fosse adicionado ao projeto, causando o erro de "Cannot find module" no código.
+
+A solução foi forçar a instalação utilizando o comando npm install next-auth@beta --legacy-peer-deps. A flag --legacy-peer-deps resolve o impasse ao instruir o gerenciador de pacotes a ignorar as divergências rígidas entre as versões de "peer dependencies" (dependências vizinhas), permitindo que o Auth.js seja instalado e reconhecido pelo TypeScript mesmo com o React 19 em estágio de transição.
