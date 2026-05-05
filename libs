@@ -1,0 +1,14 @@
+// lodash - realizar ação de tempos em tempos
+// sonner - toast
+
+
+import { SessionProvider } from 'next-auth/react'
+
+// <SessionProvider>
+//     {children}
+//     <Toaster
+//         duration={3000}
+//     />
+// <SessionProvider>
+
+//toast.success("mensagem")
